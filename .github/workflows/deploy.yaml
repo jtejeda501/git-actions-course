@@ -7,12 +7,19 @@ on:
 jobs:
   first-job:
     runs-on: ubuntu-latest
-
     env:
       NAME: "world"
+
     steps:
-      - name: "hola mundo"
+      - name: working dir
+        run: ls -la
         run: echo "set up environment ${{ env.NAME }}"
+      
+      - name: Action
+        uses: actions/checkout@v4
+
+      - name: working dir after action
+        run: ls -la
       
   second-job:
     if: ${{ github.ref == 'refs/heads/main' }}
