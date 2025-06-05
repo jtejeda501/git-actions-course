@@ -13,7 +13,6 @@ jobs:
     steps:
       - name: working dir
         run: ls -la
-        run: echo "set up environment ${{ env.NAME }}"
       
       - name: Action
         uses: actions/checkout@v4
