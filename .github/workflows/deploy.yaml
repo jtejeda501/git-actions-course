@@ -1,0 +1,15 @@
+name: "Deploy first Workflow"
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  first-job:
+  runs-on: ubuntu-latest
+  steps:
+  uses: actions/checkout@v4
+    - run: echo "Hacemos pull del codigo"
+    - run: echo "correr migraciones"
+    - run: echo "Generear el build"
+    - run: echo "publicar el build"
