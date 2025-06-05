@@ -7,9 +7,12 @@ on:
 jobs:
   first-job:
     runs-on: ubuntu-latest
+
+    env:
+      NAME: world
     steps:
       - name: "hola mundo"
-        run: echo "set up environment"
+        run: echo "set up environment $NAME"
       
   second-job:
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -17,4 +20,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "hola mundo 2"
-        run: echo "correr migraciones"
+        run: echo "correr migraciones ${{ github.ref }}"
