@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NAME: world
+      NAME: "world"
     steps:
       - name: "hola mundo"
         run: echo "set up environment $NAME"
