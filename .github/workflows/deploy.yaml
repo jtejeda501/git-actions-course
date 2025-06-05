@@ -12,7 +12,7 @@ jobs:
       NAME: "world"
     steps:
       - name: "hola mundo"
-        run: echo "set up environment $NAME"
+        run: echo "set up environment ${{ env.NAME }}"
       
   second-job:
     if: ${{ github.ref == 'refs/heads/main' }}
