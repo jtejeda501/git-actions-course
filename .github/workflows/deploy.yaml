@@ -12,6 +12,7 @@ jobs:
         run: echo "set up environment"
       
   second-job:
+    if: ${{ github.ref == 'prefs/heads/main' }}
     needs: first-job
     runs-on: ubuntu-latest
     steps:
