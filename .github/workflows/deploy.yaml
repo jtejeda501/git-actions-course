@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: working dir
         id: step_01
-        run: echo "my_variable=Hola Mundo" >> $GITHUB_ENV
+        run: echo "my_variable=Hola Mundo" >> $GITHUB_OUTPUT
       
       - name: Obtain variable
         uses: echo "${{ steps.step_01.outputs.my_variable }}"
