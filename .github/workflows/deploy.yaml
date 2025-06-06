@@ -22,3 +22,15 @@ jobs:
           name: test-artifact
           path: test.log
         
+  second-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Consumir artifactos
+        uses: actions/download-artifact@v4
+        with:
+          name: test-artifact 
+
+      - name: Mostrar contenido
+        run: cat test.log
+ 
