@@ -16,10 +16,10 @@ jobs:
       - name: Obtain variable
         uses: echo "${{ steps.step_01.outputs.my_variable }}"
       
-  second-job:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    needs: first-job
-    runs-on: ubuntu-latest
-    steps:
-      - name: "hola mundo 2"
-        run: echo "correr migraciones ${{ github.ref }}"
+  # second-job:
+  #   if: ${{ github.ref == 'refs/heads/main' }}
+  #   needs: first-job
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: "hola mundo 2"
+  #       run: echo "correr migraciones ${{ github.ref }}"
