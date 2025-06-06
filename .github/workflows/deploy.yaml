@@ -7,18 +7,14 @@ on:
 jobs:
   first-job:
     runs-on: ubuntu-latest
-    env:
-      NAME: "world"
 
     steps:
       - name: working dir
-        run: ls -la
+        id: step_01
+        run: echo "my_variable=Hola Mundo" >> $GITHUB_ENV
       
-      - name: Action
-        uses: actions/checkout@v4
-
-      - name: working dir after action
-        run: ls -la
+      - name: Obtain variable
+        uses: echo "${{ steps.step_01.outputs.my_variable }}"
       
   second-job:
     if: ${{ github.ref == 'refs/heads/main' }}
